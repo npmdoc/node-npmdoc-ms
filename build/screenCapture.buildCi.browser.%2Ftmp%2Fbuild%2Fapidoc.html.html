@@ -54,12 +54,46 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.ms">module ms</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.ms.ms">
+            function <span class="apidocSignatureSpan"></span>ms
+            <span class="apidocSignatureSpan">(val, options)</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.ms" id="apidoc.module.ms">module ms</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.ms.ms" id="apidoc.element.ms.ms">
+        function <span class="apidocSignatureSpan"></span>ms
+        <span class="apidocSignatureSpan">(val, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ms = function (val, options) {
+  options = options || {};
+  var type = typeof val;
+  if (type === 'string' &amp;&amp; val.length &gt; 0) {
+    return parse(val);
+  } else if (type === 'number' &amp;&amp; isNaN(val) === false) {
+    return options.long ? fmtLong(val) : fmtShort(val);
+  }
+  throw new Error(
+    'val is not a non-empty string or a valid number. val=' +
+      JSON.stringify(val)
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 
